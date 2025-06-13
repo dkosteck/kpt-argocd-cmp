@@ -75,5 +75,7 @@ exit_code=$?
 
 if [ $exit_code -eq 0 ]; then
     echo "patched"
+else
+    echo "failed"
 fi
 
