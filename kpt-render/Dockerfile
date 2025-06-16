@@ -7,12 +7,12 @@ WORKDIR /go/src/
 
 RUN mkdir kpt-render
 
-COPY kpt-render/go.mod kpt-render/go.sum kpt-render/
+COPY go.mod go.sum kpt-render/
 RUN cd kpt-render && go mod download && cd ..
 
 COPY . .
 ARG TARGETOS TARGETARCH
-RUN cd kpt-render/ && GOOS=$TARGETOS GOARCH=$TARGETARCH go build -o /usr/local/bin/kpt-render
+RUN GOOS=$TARGETOS GOARCH=$TARGETARCH go build -o /usr/local/bin/kpt-render
 
 #############################################
 

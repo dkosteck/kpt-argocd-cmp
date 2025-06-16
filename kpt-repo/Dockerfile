@@ -7,12 +7,12 @@ WORKDIR /go/src/
 
 RUN mkdir kpt-repo
 
-COPY kpt-repo/go.mod kpt-repo/go.sum kpt-repo/
+COPY go.mod go.sum kpt-repo/
 RUN cd kpt-repo && go mod download && cd ..
 
 COPY . .
 ARG TARGETOS TARGETARCH
-RUN cd kpt-repo/ && GOOS=$TARGETOS GOARCH=$TARGETARCH go build -o /usr/local/bin/kpt-repo
+RUN GOOS=$TARGETOS GOARCH=$TARGETARCH go build -o /usr/local/bin/kpt-repo
 
 #############################################
 
