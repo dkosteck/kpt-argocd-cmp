@@ -4,7 +4,7 @@ kubectl patch deployment argocd-repo-server -n argocd --type json -p='[
     "path": "/spec/template/spec/containers/-",
     "value": {
       "name": "kpt-repo-plugin",
-      "image": "dkostecki/kpt-repo-plugin:v1",
+      "image": "dkostecki/kpt-repo-plugin:v2",
       "command": ["/var/run/argocd/argocd-cmp-server"],
       "securityContext": {
           "runAsNonRoot": true,
@@ -31,7 +31,7 @@ kubectl patch deployment argocd-repo-server -n argocd --type json -p='[
     "path": "/spec/template/spec/containers/-",
     "value": {
       "name": "kpt-render-plugin",
-      "image": "dkostecki/kpt-render-plugin:v1",
+      "image": "dkostecki/kpt-render-plugin:v2",
       "command": ["/var/run/argocd/argocd-cmp-server"],
       "securityContext": {
           "runAsNonRoot": true,

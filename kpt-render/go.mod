@@ -2,10 +2,10 @@ module github.com/treactor/treactor-kpt-functions/argo/kpt-render
 
 go 1.19
 
-require github.com/GoogleContainerTools/kpt-functions-sdk/go/fn v0.0.0-20250527140842-1126697ce2d1
+require github.com/GoogleContainerTools/kpt-functions-sdk/go/fn v0.0.0-20250605065354-afe329cf801e
 
 require (
-	github.com/GoogleContainerTools/kpt-functions-sdk/go/api v0.0.0-20220720212527-133180134b93 // indirect
+	github.com/GoogleContainerTools/kpt-functions-sdk/go/api v0.0.0-20250605065354-afe329cf801e // indirect
 	github.com/PuerkitoBio/purell v1.1.1 // indirect
 	github.com/PuerkitoBio/urlesc v0.0.0-20170810143723-de5bf2ad4578 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
