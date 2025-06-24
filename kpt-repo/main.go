@@ -53,9 +53,15 @@ spec:
 		return err
 	}
 	if repo_url == "" {
-		ko.SetNestedField(os.Getenv("ARGOCD_APP_SOURCE_REPO_URL"), "spec", "source", "repoURL")
+		err := ko.SetNestedField(os.Getenv("ARGOCD_APP_SOURCE_REPO_URL"), "spec", "source", "repoURL")
+		if err != nil {
+			return err
+		}
 	} else {
-		ko.SetNestedField(repo_url, "spec", "source", "repoURL")
+		err := ko.SetNestedField(repo_url, "spec", "source", "repoURL")
+		if err != nil {
+			return err
+		}
 	}
 	ko.SetNestedField(dirPath, "spec", "source", "path")
 	ko.SetNestedField(destinationName, "spec", "destination", "name")
