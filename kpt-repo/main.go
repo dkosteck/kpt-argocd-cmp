@@ -63,19 +63,19 @@ spec:
 			return err
 		}
 	}
-	err := ko.SetNestedField(dirPath, "spec", "source", "path")
+	err = ko.SetNestedField(dirPath, "spec", "source", "path")
 	if err != nil {
                         return err
         }
-	err := ko.SetNestedField(destinationName, "spec", "destination", "name")
+	err = ko.SetNestedField(destinationName, "spec", "destination", "name")
 	if err != nil {
                         return err
         }
-	err := ko.SetNestedField(projectName, "spec", "project")
+	err = ko.SetNestedField(projectName, "spec", "project")
 	if err != nil {
                         return err
         }
-	err := ko.SetName(name)
+	err = ko.SetName(name)
 	if err != nil {
                         return err
         }
