@@ -63,10 +63,22 @@ spec:
 			return err
 		}
 	}
-	ko.SetNestedField(dirPath, "spec", "source", "path")
-	ko.SetNestedField(destinationName, "spec", "destination", "name")
-	ko.SetNestedField(projectName, "spec", "project")
-	ko.SetName(name)
+	err := ko.SetNestedField(dirPath, "spec", "source", "path")
+	if err != nil {
+                        return err
+        }
+	err := ko.SetNestedField(destinationName, "spec", "destination", "name")
+	if err != nil {
+                        return err
+        }
+	err := ko.SetNestedField(projectName, "spec", "project")
+	if err != nil {
+                        return err
+        }
+	err := ko.SetName(name)
+	if err != nil {
+                        return err
+        }
 
 	log.Printf("INFO: Successfully generated Argo CD Application '%s'.", name)
 
