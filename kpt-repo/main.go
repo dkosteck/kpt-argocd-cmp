@@ -96,8 +96,8 @@ func main() {
 			}
 
 			if strings.HasSuffix(path, "Kptfile") {
-				cleanedPath := filepath.join(basePath, filepath.Clean(path))
-				if !strings.HasPrefix(cleandPath, basePath) {
+				cleanedPath := filepath.Clean(path)
+				if !strings.HasPrefix(cleanedPath, ".") {
 					return nil, log.Println("ERROR: Invalid path")
 				}
 				bytes, err := os.ReadFile(cleanedPath)
