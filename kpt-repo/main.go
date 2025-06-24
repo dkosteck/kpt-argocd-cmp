@@ -100,7 +100,7 @@ func main() {
 				if !strings.HasPrefix(cleandPath, basePath) {
 					return nil, log.Println("ERROR: Invalid path")
 				}
-				bytes, err := os.ReadFile(path)
+				bytes, err := os.ReadFile(cleanedPath)
 				if err != nil {
 					return err
 				}
